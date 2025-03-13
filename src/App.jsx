@@ -11,7 +11,7 @@ function App() {
   return (
     <>
       Started the Project
-      <Button>sign Up</Button>
+      <Button variant="outline" >sign Up</Button>
     </>
   )
 }

@@ -11,7 +11,7 @@ export default defineConfig({
   ],
   resolve: {
     alias: {
-      "@": path.resolve(__dirname, "./"),  // check this line if issue is there ./src cn be thesre
+      "@": path.resolve(__dirname, "./src"),
     },
   },
 })
