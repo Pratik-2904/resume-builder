@@ -14,4 +14,8 @@ export default defineConfig({
       "@": path.resolve(__dirname, "./src"),
     },
   },
+  server: {
+    // Add this to see more detailed errors
+    hmr: { overlay: true },
+  },
 })
