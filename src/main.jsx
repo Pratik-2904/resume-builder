@@ -5,7 +5,7 @@ import './index.css'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import SignInPage from './auth/sign-in'
 import HomePage from './home/index.jsx'
-import Dashboard from './components/ui/dashboard/index.jsx'
+import Dashboard from './dashboard/index.jsx'
 import { ClerkProvider } from '@clerk/clerk-react'
 
 // Add this console log to debug
@@ -39,9 +39,8 @@ const router = createBrowserRouter([
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <ClerkProvider publishableKey={PUBLISHABLE_KEY}>
+    <ClerkProvider publishableKey={PUBLISHABLE_KEY} afterSignInUrl='/dashboard'>
       <RouterProvider router={router} />
     </ClerkProvider>
-
   </React.StrictMode>,
 )
