@@ -7,6 +7,7 @@ import SignInPage from './auth/sign-in'
 import HomePage from './home/index.jsx'
 import Dashboard from './dashboard/index.jsx'
 import { ClerkProvider } from '@clerk/clerk-react'
+import EditResume from './dashboard/resume/[resumeId]/edit/index.jsx'
 
 // Add this console log to debug
 console.log("ENV Key:", import.meta.env.VITE_CLERK_PUBLISHABLE_KEY)
@@ -32,6 +33,11 @@ const router = createBrowserRouter([
       {
         path: '/dashboard',
         element: <Dashboard />
+      },
+
+      {
+        path:'/dashboard/resume/:resumeId/edit',
+        element:<EditResume/>
       }
     ]
   }

@@ -22,6 +22,7 @@ function AddResume() {
   const [resumeTitle,setResumeTitle]=useState();
   const {user}=useUser();
   const [loading,setLoading]=useState(false);
+  const navigation=useNavigate();
 
   const onCreate=async()=>{
     setLoading(true)
@@ -42,6 +43,8 @@ function AddResume() {
       {
           setLoading(false);
           // navigation('/dashboard/resume/'+resp.data.data.documentId+"/edit");
+          navigation('/dashboard/resume/' + uuid+"/edit")
+
       }
       },(error)=>{
           setLoading(false);
