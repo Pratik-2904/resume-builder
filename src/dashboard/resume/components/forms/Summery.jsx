@@ -6,6 +6,10 @@ import { ResumeInfoContext } from '/src/context/ResumeInfoContext.jsx'
 import GlobalApi from '/service/GlobalApi.js';
 import { Brain, LoaderCircle } from 'lucide-react';
 import { toast } from 'sonner';
+// import { AIChatSession } from '/service/AIModal.js';
+// import { AIChatSession } from '/service/AIModal';
+
+const prompt="Job Title: {jobTitle}, Depends on job title give me summary for my resume withing 4-5 lines";
 
 function Summery({enabledNext}) {
     const {resumeInfo,setResumeInfo}=useContext(ResumeInfoContext);
@@ -20,6 +24,17 @@ function Summery({enabledNext}) {
             summery:summery
         })
     },[summery])
+
+    // const GenerateSummeryFromAI=async()=>{
+    //     setLoading(true)
+    //     const PROMPT=prompt.replace('{jobTitle}',resumeInfo?.jobTitle);
+    //     console.log(PROMPT);
+    //     const result=await AIChatSession.sendMessage(PROMPT);
+    //     // console.log(JSON.parse(result.response.text()))
+       
+    //     // setAiGenerateSummeryList(JSON.parse(result.response.text()))
+    //     setLoading(false);
+    // }
 
     const onSave=(e)=>{
         e.preventDefault();
@@ -50,7 +65,7 @@ function Summery({enabledNext}) {
             <form className='mt-7' onSubmit={onSave}>
                 <div className='flex justify-between items-end'>
                     <label>Add summery</label>
-                    <Button variant="outline" type="button" size="sm" className="border-primary text-primary flex gap-2"> 
+                    <Button variant="outline"  type="button" size="sm" className="border-primary text-primary flex gap-2"> 
                     <Brain className='h-4 w-4'/> Generate with AI</Button>
                 </div>
 
