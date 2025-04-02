@@ -5,6 +5,7 @@ import { Button } from '/src/components/ui/button'
 import Summery from '/src/dashboard/resume/components/forms/Summery.jsx';
 import Experience from '/src/dashboard/resume/components/forms/Experience.jsx';
 import Education from '/src/dashboard/resume/components/forms/Education.jsx';
+import Skills from '/src/dashboard/resume/components/forms/Skills.jsx';
 // import { ArrowLeft, ArrowRight, Home, LayoutGrid } from 'lucide-react'
 // import Summery from './forms/Summery';
 // import Experience from './forms/Experience';
@@ -43,6 +44,8 @@ function FormSection() {
         <Experience />      
         :activeFormIndex==4?
         <Education />
+        :activeFormIndex==5?
+        <Skills/>
         :null
         }
         
