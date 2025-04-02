@@ -4,6 +4,7 @@ import { ArrowRight, LayoutGrid,ArrowLeft } from 'lucide-react'
 import { Button } from '/src/components/ui/button'
 import Summery from '/src/dashboard/resume/components/forms/Summery.jsx';
 import Experience from '/src/dashboard/resume/components/forms/Experience.jsx';
+import Education from '/src/dashboard/resume/components/forms/Education.jsx';
 // import { ArrowLeft, ArrowRight, Home, LayoutGrid } from 'lucide-react'
 // import Summery from './forms/Summery';
 // import Experience from './forms/Experience';
@@ -40,6 +41,8 @@ function FormSection() {
             <Summery enabledNext={(v)=>setEnableNext(v)}/>
         :activeFormIndex==3?
         <Experience />      
+        :activeFormIndex==4?
+        <Education />
         :null
         }
         
